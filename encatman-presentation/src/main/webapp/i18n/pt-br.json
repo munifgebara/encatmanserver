@@ -12,6 +12,46 @@
   ,"edit": "Editar Coisa"
   ,"insert": "Inserir Coisa"
   }
+    ,"resposta":{
+        "title":"Resposta"
+        ,"menulabel": "Resposta"
+        ,"edit": "Editar Resposta"
+        ,"insert": "Inserir Resposta"
+        ,"list": "Consulta Resposta"
+        ,"id": "id"
+        ,"opcao":"Opcao"
+        ,"momento":"Momento"
+        ,"ip":"Ip"
+        ,"extra":"Extra"
+        ,"latitude":"Latitude"
+        ,"longitude":"Longitude"
+    }
+
+    ,"opcao":{
+        "title":"Opcao"
+        ,"menulabel": "Opcao"
+        ,"edit": "Editar Opcao"
+        ,"insert": "Inserir Opcao"
+        ,"list": "Consulta Opcao"
+        ,"id": "id"
+        ,"enquete":"Enquete"
+        ,"texto":"Texto"
+        ,"urlimagem":"UrlImagem"
+    }
+
+    ,"enquete":{
+        "title":"Enquete"
+        ,"menulabel": "Enquete"
+        ,"edit": "Editar Enquete"
+        ,"insert": "Inserir Enquete"
+        ,"list": "Consulta Enquete"
+        ,"id": "id"
+        ,"titulo":"Titulo"
+        ,"texto":"Texto"
+        ,"urlimagem":"UrlImagem"
+        ,"opcoes":"Opcoes"
+    }
+
 ,"address": {
   "cep": "CEP"
 ,"numero": "Número"

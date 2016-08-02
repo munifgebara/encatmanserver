@@ -1,0 +1,52 @@
+<form name="RespostaForm" gumga-form novalidate>
+		
+
+	<div gumga-form-class="opcao">
+		<label gumga-translate-tag="resposta.opcao">opcao</label>
+	    <gumga-many-to-one
+	            name="opcao"
+	            value="resposta.data.opcao"
+	            search-method="opcao.methods.asyncSearch('enquete', param)"
+	            field="enquete"
+	            authorize-add="true"
+	            post-method="opcao.methods.asyncPost(value, 'enquete')">
+	    </gumga-many-to-one>
+	</div>
+
+		
+	<div gumga-form-class="momento">
+		<label gumga-translate-tag="resposta.momento">momento</label>
+		<p class="input-group">
+			<input type="text" name="momento" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="resposta.data.momento" is-open="openedMomento" ng-click="openedMomento = !openedMomento" close-text="Close" />
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-default" ng-click="openmomento()">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</button>
+			</span>
+		</p>
+	</div>		
+	<div gumga-form-class="ip">
+		<label gumga-translate-tag="resposta.ip">ip</label>
+		<input gumga-error type="text" name="ip" ng-model="resposta.data.ip"  class="form-control" />
+	</div>		
+	<div gumga-form-class="extra">
+		<label gumga-translate-tag="resposta.extra">extra</label>
+		<input gumga-error type="text" name="extra" ng-model="resposta.data.extra"  class="form-control" />
+	</div>		
+	<div gumga-form-class="latitude">
+		<label gumga-translate-tag="resposta.latitude">latitude</label>
+		<input gumga-error type="text" name="latitude" ng-model="resposta.data.latitude"  class="form-control" />
+	</div>		
+	<div gumga-form-class="longitude">
+		<label gumga-translate-tag="resposta.longitude">longitude</label>
+		<input gumga-error type="text" name="longitude" ng-model="resposta.data.longitude"  class="form-control" />
+	</div>    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="resposta.list"
+            submit="resposta.methods.put(resposta.data)"
+            position="right"
+            valid="RespostaForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

@@ -1,0 +1,35 @@
+<form name="EnqueteForm" gumga-form novalidate>
+		
+	<div gumga-form-class="titulo">
+		<label gumga-translate-tag="enquete.titulo">titulo</label>
+		<input gumga-error type="text" name="titulo" ng-model="enquete.data.titulo"  class="form-control" />
+	</div>		
+	<div gumga-form-class="texto">
+		<label gumga-translate-tag="enquete.texto">texto</label>
+		<input gumga-error type="text" name="texto" ng-model="enquete.data.texto"  class="form-control" />
+	</div>		
+	<div gumga-form-class="urlImagem">
+		<label gumga-translate-tag="enquete.urlImagem">urlImagem</label>
+		<input gumga-error type="text" name="urlImagem" ng-model="enquete.data.urlImagem"  class="form-control" />
+	</div>		
+
+	<div class="full-width-without-padding">
+	    <label for="opcoes" gumga-translate-tag="enquete.opcoes"></label>
+	
+		<gumga-one-to-many
+		        children="enquete.data.opcoes"
+		        template-url="app/modules/enquete/views/modalOpcao.html"
+		        displayable-property="enquete"
+		        controller="ModalOpcaoController">
+		</gumga-one-to-many>
+	</div>
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="enquete.list"
+            submit="enquete.methods.put(enquete.data)"
+            position="right"
+            valid="EnqueteForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

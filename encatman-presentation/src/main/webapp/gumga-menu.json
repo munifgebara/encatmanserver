@@ -1,4 +1,61 @@
 [
+    {
+        "label": "Enquete",
+        "URL": "enquete.list",
+        "key": "CRUD-Enquete",
+        "icon": "glyphicon glyphicon-user",
+        "icon_color": "",
+        "imageUrl": "",
+        "imageWidth": "",
+        "imageHeight": "",
+        "filhos": [
+             {
+             "label": " Inserir ",
+             "URL": "enquete.insert",
+             "key": "CRUD-Enquete",
+             "icon": "glyphicon glyphicon-user",
+             "filhos": []
+             }
+         ]
+    },
+    {
+        "label": "Opcao",
+        "URL": "opcao.list",
+        "key": "CRUD-Opcao",
+        "icon": "glyphicon glyphicon-user",
+        "icon_color": "",
+        "imageUrl": "",
+        "imageWidth": "",
+        "imageHeight": "",
+        "filhos": [
+             {
+             "label": " Inserir ",
+             "URL": "opcao.insert",
+             "key": "CRUD-Opcao",
+             "icon": "glyphicon glyphicon-user",
+             "filhos": []
+             }
+         ]
+    },
+    {
+        "label": "Resposta",
+        "URL": "resposta.list",
+        "key": "CRUD-Resposta",
+        "icon": "glyphicon glyphicon-user",
+        "icon_color": "",
+        "imageUrl": "",
+        "imageWidth": "",
+        "imageHeight": "",
+        "filhos": [
+             {
+             "label": " Inserir ",
+             "URL": "resposta.insert",
+             "key": "CRUD-Resposta",
+             "icon": "glyphicon glyphicon-user",
+             "filhos": []
+             }
+         ]
+    },
 	{
   "label": "Home",
   "URL": "welcome",

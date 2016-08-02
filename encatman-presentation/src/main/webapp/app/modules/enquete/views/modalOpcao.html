@@ -1,0 +1,34 @@
+	<form name="Modal">
+	    <div class="modal-header">
+	        <h3 class="modal-title" gumga-translate-tag="opcao.title"></h3>
+	    </div>
+	    <div class="modal-body" style="overflow: auto">
+		
+
+	<div gumga-form-class="enquete">
+		<label gumga-translate-tag="enquete.enquete">enquete</label>
+	    <gumga-many-to-one
+	            name="enquete"
+	            value="enquete.data.enquete"
+	            search-method="enquete.methods.asyncSearch('titulo', param)"
+	            field="titulo"
+	            authorize-add="true"
+	            post-method="enquete.methods.asyncPost(value, 'titulo')">
+	    </gumga-many-to-one>
+	</div>
+
+		
+	<div gumga-form-class="texto">
+		<label gumga-translate-tag="enquete.texto">texto</label>
+		<input gumga-error type="text" name="texto" ng-model="enquete.data.texto"  class="form-control" />
+	</div>		
+	<div gumga-form-class="urlImagem">
+		<label gumga-translate-tag="enquete.urlImagem">urlImagem</label>
+		<input gumga-error type="text" name="urlImagem" ng-model="enquete.data.urlImagem"  class="form-control" />
+	</div>	    </div>
+	    <div class="clearfix"></div>
+	    <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" ng-click="ok(enquete.data)" ng-disabled="Modal.$invalid">OK</button>
+	        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	    </div>
+	</form>

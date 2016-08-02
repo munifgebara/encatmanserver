@@ -8,6 +8,9 @@ define(function(require) {
   require('app/apiLocations');
   require('app/modules/gumgatagdefinition/module');
   require('app/modules/gumgacustomfield/module');
+    require('app/modules/resposta/module');
+    require('app/modules/opcao/module');
+    require('app/modules/enquete/module');
   //FIMREQUIRE
   angular.module('app.core', [
     'ui.router'
@@ -15,6 +18,9 @@ define(function(require) {
     ,'app.login'
     ,'app.gumgatagdefinition'
     ,'app.gumgacustomfield'
+        ,'app.resposta'
+        ,'app.opcao'
+        ,'app.enquete'
   //FIMINJECTIONS
     ])
     .config(function($stateProvider, $urlRouterProvider, $httpProvider, $injector, GumgaAlertProvider) {
@@ -67,6 +73,30 @@ define(function(require) {
              url: '/gumgacustomfield',
              templateUrl: 'app/modules/gumgacustomfield/views/base.html'
         })
+        .state('resposta', {
+        data: {
+            id: 1
+        }, 
+            url: '/resposta',
+            templateUrl: 'app/modules/resposta/views/base.html'
+        })
+
+        .state('opcao', {
+        data: {
+            id: 1
+        }, 
+            url: '/opcao',
+            templateUrl: 'app/modules/opcao/views/base.html'
+        })
+
+        .state('enquete', {
+        data: {
+            id: 1
+        }, 
+            url: '/enquete',
+            templateUrl: 'app/modules/enquete/views/base.html'
+        })
+
         //FIMROUTE
 
 
