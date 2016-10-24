@@ -24,9 +24,6 @@ public class Opcao extends GumgaModel<Long> {
 
     @Version
     private Integer version;
-    @JsonIgnore
-    @ManyToOne
-    private Enquete enquete;
     private String texto;
     private String urlImagem;
     @JsonIgnore
@@ -42,14 +39,6 @@ public class Opcao extends GumgaModel<Long> {
 
     public void setVersion(Integer version) {
         this.version = version;
-    }
-
-    public Enquete getEnquete() {
-        return enquete;
-    }
-
-    public void setEnquete(Enquete enquete) {
-        this.enquete = enquete;
     }
 
     public String getTexto() {

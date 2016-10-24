@@ -27,7 +27,7 @@ public class Enquete extends GumgaModel<Long> {
     private String titulo;
     private String texto;
     private String urlImagem;
-    @OneToMany(mappedBy = "enquete",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Opcao> opcoes;
 
     public Enquete() {
