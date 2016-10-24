@@ -1,5 +1,6 @@
 package br.com.munif.encatman.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import gumga.framework.domain.GumgaModel; //TODO RETIRAR OS IMPORTS DESNECESSÁRIOS
 import gumga.framework.domain.GumgaMultitenancy;
 import java.io.Serializable;
@@ -28,6 +29,9 @@ public class Opcao extends GumgaModel<Long> {
     private Enquete enquete;
     private String texto;
     private String urlImagem;
+    @JsonIgnore
+    @OneToMany(mappedBy = "opcao")
+    private List<Resposta> respostas;
 
     public Opcao() {
     }
@@ -63,7 +67,14 @@ public class Opcao extends GumgaModel<Long> {
     public void setUrlImagem(String urlImagem) {
         this.urlImagem = urlImagem;
     }
-    
+
+    public List<Resposta> getRespostas() {
+        return respostas;
+    }
+
+    public void setRespostas(List<Resposta> respostas) {
+        this.respostas = respostas;
+    }
     
     
 }

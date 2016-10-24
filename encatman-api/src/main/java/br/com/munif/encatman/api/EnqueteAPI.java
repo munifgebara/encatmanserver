@@ -16,6 +16,8 @@ import javax.validation.Valid;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.validation.BindingResult;
 import gumga.framework.application.GumgaTempFileService;
+import gumga.framework.core.QueryObject;
+import gumga.framework.core.SearchResult;
 import gumga.framework.domain.domains.GumgaImage;
 import gumga.framework.presentation.GumgaAPI;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,9 +36,18 @@ public class EnqueteAPI extends GumgaAPI<Enquete, Long> {
     }
 
     @Override
+    @Transactional
     public Enquete load(@PathVariable Long id) {
         return ((EnqueteService)service).loadEnqueteFat(id);
     }
+
+    @Override
+    @Transactional
+    public SearchResult<Enquete> pesquisa(QueryObject qo) {
+        return super.pesquisa(qo); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
 
 }

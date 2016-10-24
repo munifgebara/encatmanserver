@@ -5,19 +5,6 @@
 	    <div class="modal-body" style="overflow: auto">
 		
 
-	<div gumga-form-class="enquete">
-		<label gumga-translate-tag="enquete.enquete">enquete</label>
-	    <gumga-many-to-one
-	            name="enquete"
-	            value="enquete.data.enquete"
-	            search-method="enquete.methods.asyncSearch('titulo', param)"
-	            field="titulo"
-	            authorize-add="true"
-	            post-method="enquete.methods.asyncPost(value, 'titulo')">
-	    </gumga-many-to-one>
-	</div>
-
-		
 	<div gumga-form-class="texto">
 		<label gumga-translate-tag="enquete.texto">texto</label>
 		<input gumga-error type="text" name="texto" ng-model="enquete.data.texto"  class="form-control" />

@@ -1,6 +1,8 @@
 package br.com.munif.encatman.api;
 
+import br.com.munif.encatman.application.service.EnqueteService;
 import br.com.munif.encatman.application.service.OpcaoService;
+import br.com.munif.encatman.domain.model.Enquete;
 import br.com.munif.encatman.domain.model.Opcao;
 import gumga.framework.application.GumgaService;
 import gumga.framework.presentation.GumgaAPI;
@@ -16,6 +18,8 @@ import javax.validation.Valid;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.validation.BindingResult;
 import gumga.framework.application.GumgaTempFileService;
+import gumga.framework.core.QueryObject;
+import gumga.framework.core.SearchResult;
 import gumga.framework.domain.domains.GumgaImage;
 import gumga.framework.presentation.GumgaAPI;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +36,17 @@ public class OpcaoAPI extends GumgaAPI<Opcao, Long> {
     public OpcaoAPI(GumgaService<Opcao, Long> service) {
         super(service);
     }
+    
+    @Override
+    @Transactional
+    public Opcao load(@PathVariable Long id) {
+        return ((OpcaoService)service).loadOpcaoFat(id);
+    }
 
+    @Override
+    @Transactional
+    public SearchResult<Opcao> pesquisa(QueryObject qo) {
+        return super.pesquisa(qo); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

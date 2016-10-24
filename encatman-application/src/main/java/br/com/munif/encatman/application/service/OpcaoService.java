@@ -10,16 +10,22 @@ import org.hibernate.Hibernate;
 import br.com.munif.encatman.application.repository.OpcaoRepository;
 import br.com.munif.encatman.domain.model.Opcao;
 
-
 @Service
 public class OpcaoService extends GumgaService<Opcao, Long> {
 
-	private final OpcaoRepository repository;
+    private final OpcaoRepository repository;
 
-	@Autowired
-	public OpcaoService(OpcaoRepository repository) {
-		super(repository);
-		this.repository = repository;
-	}
-	
+    @Autowired
+    public OpcaoService(OpcaoRepository repository) {
+        super(repository);
+        this.repository = repository;
+    }
+
+    public Opcao loadOpcaoFat(Long id) {
+        Opcao opcao=repository.findOne(id);
+        Hibernate.initialize(opcao.getRespostas());
+        return opcao;
+
+    }
+
 }

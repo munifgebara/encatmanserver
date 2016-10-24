@@ -16,6 +16,8 @@ import javax.validation.Valid;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.validation.BindingResult;
 import gumga.framework.application.GumgaTempFileService;
+import gumga.framework.core.QueryObject;
+import gumga.framework.core.SearchResult;
 import gumga.framework.domain.domains.GumgaImage;
 import gumga.framework.presentation.GumgaAPI;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,14 @@ public class RespostaAPI extends GumgaAPI<Resposta, Long> {
     public RespostaAPI(GumgaService<Resposta, Long> service) {
         super(service);
     }
+
+    @Override
+    @Transactional
+    public SearchResult<Resposta> pesquisa(QueryObject qo) {
+        return super.pesquisa(qo); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
 
 }
