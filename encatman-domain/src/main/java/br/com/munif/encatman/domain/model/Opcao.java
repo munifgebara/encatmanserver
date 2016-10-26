@@ -65,5 +65,12 @@ public class Opcao extends GumgaModel<Long> {
         this.respostas = respostas;
     }
     
+    public int getVotos(){
+        if (respostas!=null){
+            return respostas.size();
+        }
+        return 0;
+    }
+    
     
 }

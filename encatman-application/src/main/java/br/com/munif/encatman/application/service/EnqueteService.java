@@ -28,6 +28,11 @@ public class EnqueteService extends GumgaService<Enquete, Long> {
 		Enquete obj = repository.findOne(id);	
 		
 		Hibernate.initialize(obj.getOpcoes());
+                if (obj.getOpcoes()!=null){
+                    for (Opcao op:obj.getOpcoes()){
+                        Hibernate.initialize(op.getRespostas());
+                    }
+                }
 		
 		
 		return obj;

@@ -33,6 +33,7 @@ public class Resposta extends GumgaModel<Long> {
     private String longitude;
 
     public Resposta() {
+        momento=new Date();
     }
 
     public Integer getVersion() {

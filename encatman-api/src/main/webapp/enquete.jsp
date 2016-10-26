@@ -13,11 +13,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Encatman</title>
     </head>
-    <body>
+    <body style="font-family: sans-serif"> 
         <h1>${enquete.titulo}</h1>
         <h2>${enquete.texto}</h2>
         <c:forEach items="${enquete.opcoes}" var="opcao">
-            <h3>${opcao.texto}</h3>
+            <h2>${opcao.texto} ${opcao.votos}</h2>
+            <img src="/encatman-api/public/geraqrcode?opcaoid=${opcao.id}" height="200"/>
         </c:forEach>
+        <hr>
+        <a href="../lista">Voltar</a>
     </body>
 </html>
